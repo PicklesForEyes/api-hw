@@ -33,6 +33,7 @@ $(document).ready(function() {
       method: 'GET'
     }).done(function(obj) {
       console.log(obj.data);
+      $('#gif-display').empty();
       for(var i = 0; i < obj.data.length; i++){
         var current = obj.data[i].images
         var still = current.fixed_height_still.url;
@@ -41,16 +42,19 @@ $(document).ready(function() {
         var rate = obj.data[i].rating
         console.log(rate)
 
+        var newHolder = $('<div class="holster">');
+
         var gif = $('<img>');
           gif.addClass('play-pause');
-          gif.attr('data-playing', 'false');
+          gif.attr('data-playing', false);
           gif.attr('data-live', live);
           gif.attr('data-still', still);
           gif.attr('src', still);
 
         var rating = $('<p>Rated:' + rate + '</p>')
 
-        $('#gif-display').append(rating, gif);
+        newHolder.append(rating, gif);
+        $('#gif-display').append(newHolder);
       }
     })
   })
