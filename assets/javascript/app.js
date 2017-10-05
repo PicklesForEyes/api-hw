@@ -23,7 +23,12 @@ $(document).ready(function() {
   })
 
   $(document).on('click', '.btn-success', function() {
-    console.log($(this).attr('data-value'));
+    var btnVal = $(this).attr('data-value');
+    console.log(btnVal);
+
+    var queryUrl = 'http://api.giphy.com/v1/gifs/search?q=' + btnVal + '&limit=10&api_key=cxfIQfJBUKH9fFxsLp5sSwLBOICRb8Ud';
+
+    console.log(queryUrl)
   })
 
   // need ajax request
