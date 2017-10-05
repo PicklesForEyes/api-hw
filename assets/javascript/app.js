@@ -38,7 +38,17 @@ $(document).ready(function() {
         var still = current.original_still.url;
         var live = current.original.url;
         console.log(current);
-        
+        var rate = obj.data[i].rating
+        console.log(rate)
+
+        // var gif = $('<img>');
+        //   gif.addClass('play-pause');
+        //   gif.attr('data-playing', 'false');
+        //   gif.attr('data-live', live);
+        //   gif.attr('data-still', still);
+        //   gif.attr('src', still);
+
+        // $('gif-display').append
       }
     })
   })
