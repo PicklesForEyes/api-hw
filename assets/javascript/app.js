@@ -56,7 +56,7 @@ $(document).ready(function() {
           gif.attr('data-still', still);
           gif.attr('src', still);
 
-        var rating = $('<p>Rated:' + rate + '</p>')
+        var rating = $('<p>Rated: ' + rate + '</p>')
 
         newHolder.append(rating, gif);
         $('#gif-display').append(newHolder);
