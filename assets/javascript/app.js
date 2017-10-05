@@ -12,7 +12,9 @@ $(document).ready(function() {
 
   $('#submit').on('click', function(event) {
     event.preventDefault();
-
+    var btnContext = $('#new-button').val().trim();
+      $('#new-button').val('');
+    console.log(btnContext);
   })
 
   // need ajax request
