@@ -28,7 +28,14 @@ $(document).ready(function() {
 
     var queryUrl = 'http://api.giphy.com/v1/gifs/search?q=' + btnVal + '&limit=10&api_key=cxfIQfJBUKH9fFxsLp5sSwLBOICRb8Ud';
 
-    console.log(queryUrl)
+    console.log(queryUrl);
+
+    $.ajax({
+      url: queryUrl,
+      method: 'GET'
+    }).done(function(obj) {
+      console.log(obj);
+    })
   })
 
   // need ajax request
