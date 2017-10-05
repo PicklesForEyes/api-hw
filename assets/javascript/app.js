@@ -10,6 +10,11 @@ $(document).ready(function() {
     $('#button-display').append(btn);
   }
 
+  $('#submit').on('click', function(event) {
+    event.preventDefault();
+
+  })
+
   // need ajax request
 
   // need api format
