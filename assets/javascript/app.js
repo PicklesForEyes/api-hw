@@ -22,6 +22,10 @@ $(document).ready(function() {
     console.log(btnContext);
   })
 
+  $(document).on('click', '.btn-success', function() {
+    console.log($(this).attr('data-value'));
+  })
+
   // need ajax request
 
   // need api format
