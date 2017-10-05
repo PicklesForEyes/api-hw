@@ -6,3 +6,12 @@ button {
   display: inline-block;
   padding: 20px;
 }
+
+.label {
+  font-size: 10pt;
+}
+
+p {
+  font-size: 12pt;
+  font-weight: bold;
+}
