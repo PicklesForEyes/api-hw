@@ -35,20 +35,22 @@ $(document).ready(function() {
       console.log(obj.data);
       for(var i = 0; i < obj.data.length; i++){
         var current = obj.data[i].images
-        var still = current.original_still.url;
-        var live = current.original.url;
+        var still = current.fixed_height_still.url;
+        var live = current.fixed_height.url;
         console.log(current);
         var rate = obj.data[i].rating
         console.log(rate)
 
-        // var gif = $('<img>');
-        //   gif.addClass('play-pause');
-        //   gif.attr('data-playing', 'false');
-        //   gif.attr('data-live', live);
-        //   gif.attr('data-still', still);
-        //   gif.attr('src', still);
+        var gif = $('<img>');
+          gif.addClass('play-pause');
+          gif.attr('data-playing', 'false');
+          gif.attr('data-live', live);
+          gif.attr('data-still', still);
+          gif.attr('src', still);
 
-        // $('gif-display').append
+        var rating = $('<p>Rated:' + rate + '</p>')
+
+        $('#gif-display').append(rating, gif);
       }
     })
   })
