@@ -59,6 +59,11 @@ $(document).ready(function() {
     })
   })
 
+  $(document).on('click', '.play-pause', function(click) {
+    click.preventDefault();
+    console.log($(this).attr('data-playing'));
+  })
+
   drawButtons();
 
 })
