@@ -46,7 +46,7 @@ $(document).ready(function() {
 
         var gif = $('<img>');
           gif.addClass('play-pause');
-          gif.attr('data-playing', false);
+          gif.attr('data-playing', 'still');
           gif.attr('data-live', live);
           gif.attr('data-still', still);
           gif.attr('src', still);
@@ -62,6 +62,15 @@ $(document).ready(function() {
   $(document).on('click', '.play-pause', function(click) {
     click.preventDefault();
     console.log($(this).attr('data-playing'));
+    if(($(this).attr('data-playing')) === 'still'){
+      $(this).attr('data-playing', 'playing');
+      var src = $(this).attr('data-live');
+      $(this).attr('src', src);
+    } else if( $(this).attr('data-playing') === 'playing'){
+      $(this).attr('data-playing', 'still');
+      var src = $(this).attr('data-still');
+      $(this).attr('src', src);
+    }
   })
 
   drawButtons();
