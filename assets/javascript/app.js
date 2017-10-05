@@ -24,11 +24,11 @@ $(document).ready(function() {
 
   $(document).on('click', '.btn-success', function() {
     var btnVal = $(this).attr('data-value');
-    console.log(btnVal);
+    // console.log(btnVal);
 
     var queryUrl = 'http://api.giphy.com/v1/gifs/search?q=' + btnVal + '&limit=10&api_key=cxfIQfJBUKH9fFxsLp5sSwLBOICRb8Ud';
 
-    console.log(queryUrl);
+    // console.log(queryUrl);
 
     $.ajax({
       url: queryUrl,
@@ -37,14 +37,6 @@ $(document).ready(function() {
       console.log(obj);
     })
   })
-
-  // need ajax request
-
-  // need api format
-
-  // need input added to buttons arr
-
-  // need to append new buttons
 
   drawButtons();
 
