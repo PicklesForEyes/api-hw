@@ -1,6 +1,6 @@
 $(document).ready(function() {
   
-  var buttons = ['java', 'coffee', 'espresso'];
+  var buttons = ['tea', 'coffee', 'espresso', 'gelato', 'milkshakes'];
 
   function drawButtons() {
     $('#button-display').empty();
@@ -25,7 +25,7 @@ $(document).ready(function() {
   $(document).on('click', '.btn-success', function() {
     var btnVal = $(this).attr('data-value');
     // console.log(btnVal);
-    var queryUrl = 'http://api.giphy.com/v1/gifs/search?q=' + btnVal + '&limit=10&api_key=cxfIQfJBUKH9fFxsLp5sSwLBOICRb8Ud';
+    var queryUrl = 'http://api.giphy.com/v1/gifs/search?q=' + btnVal + '&limit=25&api_key=cxfIQfJBUKH9fFxsLp5sSwLBOICRb8Ud';
     // console.log(queryUrl);
 
     $.ajax({
@@ -34,13 +34,18 @@ $(document).ready(function() {
     }).done(function(obj) {
       console.log(obj.data);
       $('#gif-display').empty();
-      for(var i = 0; i < obj.data.length; i++){
+      for(var i = 0; i < 10; i++){
+
+        while (obj.data[i].rating === 'r'){
+          i++;
+        }
+
         var current = obj.data[i].images
         var still = current.fixed_height_still.url;
         var live = current.fixed_height.url;
         console.log(current);
         var rate = obj.data[i].rating
-        console.log(rate)
+        // console.log(rate)
 
         var newHolder = $('<div class="holster">');
 
