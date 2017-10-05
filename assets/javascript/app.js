@@ -3,6 +3,7 @@ $(document).ready(function() {
   var buttons = ['java', 'coffee', 'espresso'];
 
   function drawButtons() {
+    $('#button-display').empty();
     for(var i = 0; i < buttons.length; i++) {
       var btn = $('<button>');
         btn.attr('data-value', buttons[i]);
@@ -16,6 +17,8 @@ $(document).ready(function() {
     event.preventDefault();
     var btnContext = $('#new-button').val().trim();
       $('#new-button').val('');
+    buttons.push(btnContext);
+    drawButtons();
     console.log(btnContext);
   })
 
